@@ -1,0 +1,52 @@
+E-commerce Platform
+-------------------
+Description: Build a full-fledged e-commerce platform where users can browse products, add them to a shopping cart, and proceed with secure checkout. Admins should be able to manage products, view orders, and handle inventory.
+Tech Stack: MongoDB (product, user, and order data), Express (API routes for managing products and orders), React (front-end shopping experience), Node.js (server-side functionality).
+Extra Features: Payment integration (like Stripe), product search and filtering, and customer reviews.
+
+
+Vegan & Specialty Cakes E-commerce
+----------------------------------
+Description: Create an e-commerce platform that specializes in vegan, gluten-free, and allergen-friendly cakes, catering to customers with specific dietary preferences.
+Features:
+Customizable filter options for dietary preferences (vegan, gluten-free, nut-free, etc.)
+Product catalog with detailed ingredients and nutritional information
+Customer reviews and ratings for each type of specialty cake
+User profiles for saving dietary preferences and past orders
+Extra: Subscription service for dietary cakes or “cake-of-the-month” based on user preferences.
+
+Design:
+-------
+https://dribbble.com/shots/23814523-Dupond-et-Dupont-Bakery-Where-Every-Bite-Tells-a-Story
+
+regular
+cakes
+Ice-cream
+Gift-box
+Kids-special
+brownies
+french-fries
+
+Include map location for address
+
+
+
+https://www.canva.com/templates/EAGXwN0tarQ-beige-and-brown-illustrative-bakery-presentation/  ----> POSTER
+https://www.canva.com/templates/EAGT6DiyDtQ-beige-brown-and-pink-watercolor-minimalistic-bakery-menu-price-list-instagram-story/  ---> menu page
+
+
+{
+  "Name": "BM",
+  "Phone": 12345,
+  "Email": "bm@gmail.com",
+  "Address": "43 xyz street"
+}
+
+{
+  "Name": "Brownie",
+  "Category": "cake",
+  "Price": 10,
+  "Image_URL": "https://handletheheat.com/wp-content/uploads/2017/03/chewy-brownies-SQUARE.jpg",
+  "DiscountPrice": 8,
+  "Ingredients":["flour","chocolate","sugar","butter"]
+}

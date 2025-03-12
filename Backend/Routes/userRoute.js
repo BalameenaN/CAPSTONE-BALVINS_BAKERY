@@ -13,8 +13,21 @@ userRouter.get('/',async(req,res)=>{
         res.status(400).json(e);
     }
 
+});
+
+//get users using id
+userRouter.get('/id/:id', async(req,res)=>{
+    console.log("inside /id-get");
+    try{
+        const result = await userModel.findById(req.params.id);
+        res.status(200).json(result);
+    }catch(e){
+        res.status(400).json(e);
+    }
+   
 })
 
+//post request to create new user
 userRouter.post('/',async(req,res)=>{
     console.log("inside /-post");
     console.log(req.body);
@@ -26,6 +39,7 @@ userRouter.post('/',async(req,res)=>{
     }
 });
 
+//put request to update certain property of the user with given id
 userRouter.put('/:id', async(req,res)=>{
     console.log("inside /-put");
     try{
@@ -36,6 +50,7 @@ userRouter.put('/:id', async(req,res)=>{
     }
 });
 
+//delete request to delete the user with given id
 userRouter.delete('/:id', async(req,res)=>{
     console.log("inside /-delete");
     try{

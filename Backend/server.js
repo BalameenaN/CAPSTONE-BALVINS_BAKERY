@@ -3,6 +3,7 @@ import cors from 'cors'
 import connectDB from './database.js';
 import 'dotenv/config'
 import userRouter from './Routes/userRoute.js';
+import productRouter from './Routes/productRoute.js';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 //route middleware
 app.use('/user',userRouter);
+app.use('/product',productRouter)
 
 //homepage API
 app.get('/',(req,res)=>{
