@@ -7,6 +7,7 @@ import userRouter from './Routes/userRoute.js';
 const app = express();
 
 const port = 8080;
+app.use(express.json());
 
 //route middleware
 app.use('/user',userRouter);
