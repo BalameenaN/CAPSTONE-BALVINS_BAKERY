@@ -1,0 +1,39 @@
+.nav-img{
+
+    width: 120px;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    background-image: url("../image/bg_image.jpg");
+    z-index: -1;
+    inset: 0;
+    background-size: cover;
+    opacity: 0.3;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: auto;
+    
+}
+.nav-container{
+    display: flex;
+}
+.link{
+    color: brown;
+    text-decoration: none;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    height: 50px;
+   
+}
+.link:hover{
+    background-color: brown;
+    color: white;
+    
+}
