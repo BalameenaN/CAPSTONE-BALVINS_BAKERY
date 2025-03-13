@@ -68,3 +68,38 @@ fieldset{
     border: none;
     color: white;
 }
+.product-container img{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.product-container img:hover{
+    width: 220px;
+    height: 250px;
+}
+.product-container{
+    border: 1px solid red;
+    width: 250px;
+   background-color: rgba(154, 139, 139, 0.904);
+    text-align: center;
+    margin: 20px 20px;
+    border-radius: 10px;
+    color: rgb(234, 230, 21);
+}
+.product-btn{
+    margin: 10px 10px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: brown;
+    color: white;
+    font-size: medium;
+
+}
+
+.product-btn:hover{
+   
+    background-color: blanchedalmond;
+    color: rgb(237, 99, 99);
+}
