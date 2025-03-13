@@ -1,12 +1,11 @@
 import Nav from './Nav.jsx'
 
 
-export default function Home(){
+export default function Home() {
     console.log("inside Home");
-    return(
+    return (
         <>
-        <Nav />
-        
+            <Nav />
         </>
     )
 }
