@@ -37,7 +37,8 @@ body::before {
     color: white;
     
 }
-fieldset{
+.fieldset-container{
+    
    width: 300px;
    background-color: rgb(230, 226, 222);
    margin: 10px;
@@ -107,4 +108,28 @@ fieldset{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+}
+.carousel{
+    width: 70%;
+    height: 10%;
+   
+    margin-top: 10px;
+    
+}
+
+.centered-carousel {
+    display: flex;
+    justify-content: center;
+   
+}
+.category-div img{
+
+    width: 70%;
+    height: 70%;
+    border-radius: 80%;
+}
+.category-container{
+    display: flex;
+    text-align: center;
+    margin: 30px 40px;
 }

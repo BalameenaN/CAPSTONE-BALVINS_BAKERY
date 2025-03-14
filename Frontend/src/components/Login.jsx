@@ -5,7 +5,7 @@ export default function Login() {
         <>
             <Nav />
             <h1 style={{ textAlign: 'center', color: 'brown' }}> Login to your account to place orders!</h1>
-            <fieldset><h3>Login</h3>
+            <fieldset className='fieldset-container'><h3>Login</h3>
                 <form className='form-container'>
                     <label>Name:
                         <input type='text' />
