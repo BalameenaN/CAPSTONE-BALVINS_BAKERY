@@ -39,6 +39,45 @@ userRouter.post('/',async(req,res)=>{
     }
 });
 
+userRouter.post('/signup', async(req,res)=>{
+    console.log("inside signup");
+    console.log(req.body.Email);
+    try{
+        const userData = await userModel.find({Email: req.body.Email});
+        console.log(userData, "userdata");
+        if(userData == ""){
+            const newUser = await userModel.create(req.body);
+            res.status(200).json("success");
+        }
+        else{
+            res.status(409).json({"error": "A user with this email already exists"});
+        }
+    }
+    catch(e){
+        res.status(400).json(e);
+    }
+})
+
+userRouter.post('/login', async(req,res)=>{
+    console.log("inside login");
+    try{
+        const userData = await userModel.find({Email: req.body.Email});
+        console.log(userData);
+
+        if(userData == ""){
+            console.log("inside if-login");
+            res.status(404).json({"error": "Email does not exist"});
+        }
+        else{
+            console.log("inside else-login");
+            res.status(200).json("success");
+        }
+
+    }catch(e){
+        console.log(e);
+    }
+})
+
 //put request to update certain property of the user with given id
 userRouter.put('/:id', async(req,res)=>{
     console.log("inside /-put");

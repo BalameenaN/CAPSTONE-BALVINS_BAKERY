@@ -1,41 +1,25 @@
 import Nav from './Nav'
 import {useRef, useState, useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import {Link} from 'react-router-dom';
 
-export default function Signup(){
+export default function Signup({user, setUser}){
   
     const nameRef = useRef();
     const emailRef = useRef();
     const phoneRef = useRef();
     const pwdRef = useRef();
     const addrRef = useRef();
-    const navigate= useNavigate();
+   
     const [isRegistered, setIsRegisterd] = useState(false);
     const [isUserExist, setIsUserExist] = useState(false);
-    const [user, setUser] = useState([]);
-
-    async function getUser(){
-
-        try{
-            const result = await fetch('http://localhost:8080/user');
-            const response = await result.json();
-            setUser(response);
-
-        }catch(e){
-            console.log(e);
-        }
-    }
-
-    useEffect(()=>{
-        getUser();
-    },[]);
+   
 
     async function submitHandle(e){
         e.preventDefault();
 
-        const existingUser = user.find((u)=> u.Email == emailRef.current.value);
-        if(!existingUser){
+       // const existingUser = user.find((u)=> u.Email == emailRef.current.value);
+       /* if(!existingUser){*/
         const data = {
             Name : nameRef.current.value,
             Phone : phoneRef.current.value,
@@ -45,7 +29,7 @@ export default function Signup(){
         }
     
         try{
-            const response = await fetch('http://localhost:8080/user', {
+            const response = await fetch('http://localhost:8080/user/signup', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
@@ -53,17 +37,21 @@ export default function Signup(){
                 }
         });
             const result = await response.json();
-            setUser([...user, result]);
-           setIsRegisterd(true);
-           setIsUserExist(false);
+            //setUser([...user, result]);
+            console.log(result, "result");
+            if(result == 'success'){
+                setIsRegisterd(true);
+                setIsUserExist(false);
+            }else{
+                setIsUserExist(true);
+            }
+          
         }catch(e){
             console.log(e);
         }
-    }else{
-        setIsUserExist(true);
     }
 
-    }
+    
 
     return(
         <>
@@ -72,7 +60,7 @@ export default function Signup(){
                     <h5 style={{textAlign: 'center'}}>Login in <Link  to='/login'>HERE</Link> to continue exploring our products</h5>
                     </>:  <>
                      <h1 style={{ textAlign: 'center', color: 'brown' }}> Registration page</h1>
-                    <fieldset className='fieldset-container'><h3>Login</h3>
+                    <fieldset className='fieldset-container'>
                         <form className='form-container' onSubmit={submitHandle}>
                             <label>Name:
                                 <input ref={nameRef} type='text' />

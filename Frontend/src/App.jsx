@@ -8,6 +8,7 @@ import Login from './components/Login.jsx'
 import Icecream from './components/Icecream.jsx'
 import Signup from './components/Signup.jsx'
 
+ 
 
 function App() {
     const[product, setProduct] = useState([]);
@@ -23,6 +24,7 @@ function App() {
                 console.log(e);
             }
         }
+
     
         //gets called whenever the component is loaded to fetch the product details
         useEffect(()=>{
@@ -33,7 +35,6 @@ function App() {
 
     return(
         <>
-       
         <Routes>
                <Route path='/' element={<Home />}/>
                <Route path='/product' element={<Product product={product}/>} />
