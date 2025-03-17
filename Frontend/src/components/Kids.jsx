@@ -10,10 +10,11 @@ export default function Kids({product}){
     return(
         <>
         <Nav />
-        <h1 style={{ color: 'brown' }}>KID'S SPECIAL</h1>
+        <h1 style={{ color: 'brown', marginTop : '20px' }}>KID'S SPECIAL</h1>
         <div className='main-container'>
         {kidsProduct}
         </div>
+    
         </>
     )
 }

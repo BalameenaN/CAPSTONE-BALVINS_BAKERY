@@ -5,6 +5,8 @@ import Home from './components/Home.jsx'
 import Product from './components/Product.jsx'
 import Kids from './components/Kids.jsx'
 import Login from './components/Login.jsx'
+import Icecream from './components/Icecream.jsx'
+import Signup from './components/Signup.jsx'
 
 
 function App() {
@@ -34,9 +36,11 @@ function App() {
        
         <Routes>
                <Route path='/' element={<Home />}/>
-              <Route path='/product' element={<Product product={product}/>} />
+               <Route path='/product' element={<Product product={product}/>} />
                <Route path='/kids' element={<Kids product={product}/>} />
                <Route path='/login' element={<Login />} />
+               <Route path='/icecream' element={<Icecream product={product}/>} />
+               <Route path='/signup' element={<Signup />} />
             </Routes>
         
         </>

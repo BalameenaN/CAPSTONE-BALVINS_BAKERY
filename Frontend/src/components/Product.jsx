@@ -19,11 +19,11 @@ export default function Product({product}){
     return(
         <>
         <Nav />
-        <h1 style={{ color: 'brown' }}>CAKES</h1>
+        <h1 style={{ color: 'brown', marginTop : '20px' }}>CAKES</h1>
         <div className='main-container'>
         {cakeProduct}
         </div>
-        <h1 style={{ color: 'brown' }}>SAVOURY</h1>
+        <h1 style={{ color: 'brown', marginTop : '20px' }}>SAVOURY</h1>
         <div className='main-container'>
         {savouryProduct}
         </div>

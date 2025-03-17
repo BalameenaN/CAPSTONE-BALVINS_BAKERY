@@ -19,11 +19,14 @@ export default function Category(){
         <h4>Kid's special</h4>
         </div>
         <div className='category-div'>
-        <img src={icecream} />
+        <Link to='/icecream'>
+        <img src={icecream} /></Link>
         <h4>Ice creams</h4>
         </div>
         </div>
+        
         </>
+        
 
     );
 }

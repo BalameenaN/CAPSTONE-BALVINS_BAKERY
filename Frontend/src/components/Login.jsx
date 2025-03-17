@@ -1,6 +1,11 @@
 import Nav from './Nav'
+import { useRef } from 'react';
+import {Link} from 'react-router-dom';
 
 export default function Login() {
+    const nameRef = useRef();
+    const emailRef = useRef();
+
     return (
         <>
             <Nav />
@@ -8,10 +13,10 @@ export default function Login() {
             <fieldset className='fieldset-container'><h3>Login</h3>
                 <form className='form-container'>
                     <label>Name:
-                        <input type='text' />
+                        <input ref={nameRef} type='text' />
                     </label><br />
                     <label>Email:
-                        <input type='text' />
+                        <input ref={emailRef} type='text' />
                     </label><br />
                     <label>Password:
                         <input type='text' />
@@ -19,8 +24,10 @@ export default function Login() {
                     <button>Login</button>
                 </form>
             </fieldset>
-            <h2 style={{ textAlign: 'center' }}>Do not have account?Signup <a href=''>HERE</a></h2>
-
+            <h2 style={{ textAlign: 'center' }}>Do not have account?Signup <Link  to='/signup'>HERE</Link></h2>
+            <footer style={{alignItems:'end', position: 'absolute', bottom: '0' }}>
+            &copy; 2025 baalvinbakery. All rights reserved.
+         </footer>
         </>
     )
 }
