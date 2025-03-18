@@ -3,7 +3,7 @@ import {useRef, useState, useEffect} from 'react';
 
 import {Link} from 'react-router-dom';
 
-export default function Signup({user, setUser}){
+export default function Signup(){
   
     const nameRef = useRef();
     const emailRef = useRef();
@@ -50,8 +50,6 @@ export default function Signup({user, setUser}){
             console.log(e);
         }
     }
-
-    
 
     return(
         <>

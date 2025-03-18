@@ -12,6 +12,7 @@ export default function Nav() {
                     <div>
                         <img className='nav-img' src={logo} />
                     </div>
+                    <Link className='nav-btn' to='/cart'>Cart</Link>
                     <div className='nav-bar'>
                         <Link className='link' to='/'>
                             <h3>Home</h3>

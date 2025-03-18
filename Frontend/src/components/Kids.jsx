@@ -3,6 +3,7 @@ import productMatching from '../utils/productMatching.jsx';
 
 export default function Kids({product}){
     console.log(product);
+    //console.log(typeof dispatch);
 
     const kids = product.filter((p)=>p.Category == 'kids');
     const kidsProduct = productMatching(kids);
