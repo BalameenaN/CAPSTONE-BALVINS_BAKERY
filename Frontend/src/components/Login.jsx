@@ -17,6 +17,7 @@ export default function Login() {
 
         const data={
              Email: emailRef.current.value,
+             Password: pwdRef.current.value
 
         };
 
@@ -64,7 +65,7 @@ export default function Login() {
                 </form>
             </fieldset>
             <h2 style={{ textAlign: 'center' }}>Do not have account?Signup <Link  to='/signup'>HERE</Link></h2>
-            {error && <h5 style={{textAlign: 'center', color: 'red'}} >Incorrect username and password</h5>}
+            {error && <h5 style={{textAlign: 'center', color: 'red'}} >Incorrect username or password</h5>}
             <footer style={{alignItems:'end', position: 'absolute', bottom: '0' }}>
             &copy; 2025 baalvinbakery. All rights reserved.
          </footer>

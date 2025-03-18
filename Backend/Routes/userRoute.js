@@ -59,7 +59,7 @@ userRouter.post('/signup', async(req,res)=>{
 })
 
 userRouter.post('/login', async(req,res)=>{
-    console.log("inside login");
+    console.log(req.body);
     try{
         const userData = await userModel.find({Email: req.body.Email});
         console.log(userData);
@@ -69,8 +69,13 @@ userRouter.post('/login', async(req,res)=>{
             res.status(404).json({"error": "Email does not exist"});
         }
         else{
-            console.log("inside else-login");
+            if (userData[0].Password === req.body.Password){
+            console.log(userData[0].Password === req.body.Password);
             res.status(200).json("success");
+            }else{
+                res.status(404).json({"error": "Incorrect password"});
+            }
+            
         }
 
     }catch(e){

@@ -7,7 +7,7 @@
 body::before {
     content: "";
     position: fixed;
-    background-image: url("../image/bg_image.jpg");
+   background-image: url("../image/bg_image.jpg");
     z-index: -1;
     inset: 0;
     background-size: cover;
@@ -25,15 +25,24 @@ body::before {
     display: flex;
 }
 .nav-btn{
+    text-decoration: none;
     position: absolute;
     height: 40px;
     width: 70px;
     left: 94%;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     border-radius: 5px;
-    background-color: bisque;
-    margin-top: 5px;
+    background-color: rgb(236, 184, 165);
+    margin-top: 10px;
+    text-align: center;
+    color: brown;
+    padding: 5px 5px;
     
+}
+.nav-btn:hover{
+   background-color: brown;
+   color: white;
+   font-size: medium;
 }
 .link{
     color: brown;
@@ -91,13 +100,13 @@ body::before {
     height: 250px;
 }
 .product-container{
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     width: 250px;
-   background-color: rgba(154, 139, 139, 0.904);
+   background-color: rgba(219, 157, 157, 0.904);
     text-align: center;
     margin: 20px 20px;
     border-radius: 10px;
-    color: rgb(234, 230, 21);
+    color: rgb(247, 244, 244);
 }
 .product-btn{
     margin: 10px 10px;
@@ -123,7 +132,6 @@ body::before {
 .carousel{
     width: 70%;
     height: 10%;
-   
     margin-top: 10px;
     
 }
@@ -143,4 +151,24 @@ body::before {
     display: flex;
     text-align: center;
     margin: 30px 40px;
+}
+.checkout{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: brown;
+    color: white;
+    padding: 5px 5px;
+}
+.contact-container{
+    text-align: center;
+}
+.contact-container h3{
+    color: brown;
+}
+.contact-container p{
+    font-size:large;
 }
