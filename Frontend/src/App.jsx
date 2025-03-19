@@ -12,7 +12,7 @@ import Cart from './components/Cart.jsx'
 
 function App() {
     const[product, setProduct] = useState([]);
-
+    
      //async function used to fetch the product details
         async function getProduct(){
     

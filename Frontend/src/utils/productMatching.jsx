@@ -1,9 +1,13 @@
+ import {useState} from 'react'
  //function to create JSX element for each product
 
  
  export default function productMatching(prod){
+
+    const[productID, setproductID] = useState("");
      
     async function clickHandle(id){
+        
 
         const cartInitial = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -15,7 +19,11 @@
           const newArr = [...cartInitial, result];
           console.log(newArr, "newArr");
           localStorage.setItem('cart', JSON.stringify(newArr));
-           
+           setproductID(id);
+
+           setTimeout(()=>{
+            setproductID("");
+           }, 3000);
           
         }catch(e){
             console.log(e);
@@ -33,6 +41,7 @@
             <h5>Price: ${p.Price}</h5>
             <h5>Rating: {p.Rating}</h5>
             <button className='product-btn' onClick={()=>clickHandle(p._id)}>Add to cart</button>
+            {(productID == p._id) && <h5 style={{color:'red'}}><span>&#10003;</span>Added to cart</h5>}
             </div>
             </>
         ) 
