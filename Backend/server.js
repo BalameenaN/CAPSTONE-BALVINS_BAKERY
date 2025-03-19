@@ -8,8 +8,8 @@ import productRouter from './Routes/productRoute.js';
 const app = express();
 
 const port = 8080;
-app.use(express.json());
-app.use(cors());
+app.use(express.json()); 
+app.use(cors()); // using cors to establish connection between frontend & backend
 
 //route middleware
 app.use('/user',userRouter);

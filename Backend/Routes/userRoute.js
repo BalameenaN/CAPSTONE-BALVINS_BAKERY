@@ -39,12 +39,14 @@ userRouter.post('/',async(req,res)=>{
     }
 });
 
+//post request for signup page
 userRouter.post('/signup', async(req,res)=>{
     console.log("inside signup");
     console.log(req.body.Email);
     try{
         const userData = await userModel.find({Email: req.body.Email});
         console.log(userData, "userdata");
+        //condition for checking if the given emailID is already registered 
         if(userData == ""){
             const newUser = await userModel.create(req.body);
             res.status(200).json("success");
@@ -58,12 +60,13 @@ userRouter.post('/signup', async(req,res)=>{
     }
 })
 
+//login form API request 
 userRouter.post('/login', async(req,res)=>{
     console.log(req.body);
     try{
         const userData = await userModel.find({Email: req.body.Email});
         console.log(userData);
-
+        //condition for checking if the given email id is valid to login
         if(userData == ""){
             console.log("inside if-login");
             res.status(404).json({"error": "Email does not exist"});

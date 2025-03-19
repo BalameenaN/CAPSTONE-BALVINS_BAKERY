@@ -5,7 +5,7 @@ import img2 from '../../image/carousel2.jpg'
 import img3 from '../../image/carousel3.jpg'
 import '../App.css'
 
-
+//using bootstrap carousel for displaying the images in home page
 const AppCarousel = () => {
     return (
         <div className="centered-carousel" >

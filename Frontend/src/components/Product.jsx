@@ -3,8 +3,6 @@ import productMatching from '../utils/productMatching.jsx';
 
 
 export default function Product({product}){
-    /* const {product} = useContext(ProductContext);
-     console.log(product);*/
 
     //filters product with category 'cake'
     const cake = product.filter((p)=> p.Category == 'cake');

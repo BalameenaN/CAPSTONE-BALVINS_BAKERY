@@ -17,6 +17,10 @@ const productSchema = new mongoose.Schema({
      Ingredients : [String]
 });
 
+//included index for category field
+productSchema.index({Category:1});
+
+
 const productModel = mongoose.model('product', productSchema);
 
 export default productModel;

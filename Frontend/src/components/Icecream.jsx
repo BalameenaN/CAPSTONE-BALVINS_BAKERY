@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import productMatching from '../utils/productMatching.jsx';
 
+//component to display all the products under icecream category
 export default function Icecream({product}){
     console.log(product);
 

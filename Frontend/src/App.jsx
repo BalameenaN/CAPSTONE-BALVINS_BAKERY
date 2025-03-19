@@ -8,10 +8,11 @@ import Login from './components/Login.jsx'
 import Icecream from './components/Icecream.jsx'
 import Signup from './components/Signup.jsx'
 import Cart from './components/Cart.jsx'
+import Checkout from './components/Checkout.jsx'
  
 
 function App() {
-    const[product, setProduct] = useState([]);
+    const[product, setProduct] = useState([]); //state to store all the product details from DB
     
      //async function used to fetch the product details
         async function getProduct(){
@@ -42,6 +43,8 @@ function App() {
                <Route path='/icecream' element={<Icecream product={product}/>} />
                <Route path='/signup' element={<Signup />} />
                <Route path='/cart' element={<Cart />} />
+               <Route path='/checkout' element={<Checkout />} />
+               
             </Routes>
         
         </>

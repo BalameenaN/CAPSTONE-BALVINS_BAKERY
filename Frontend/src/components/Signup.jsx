@@ -18,8 +18,6 @@ export default function Signup(){
     async function submitHandle(e){
         e.preventDefault();
 
-       // const existingUser = user.find((u)=> u.Email == emailRef.current.value);
-       /* if(!existingUser){*/
         const data = {
             Name : nameRef.current.value,
             Phone : phoneRef.current.value,
@@ -29,6 +27,7 @@ export default function Signup(){
         }
     
         try{
+            //sending the details given by user for validation in the backend
             const response = await fetch('http://localhost:8080/user/signup', {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -37,7 +36,6 @@ export default function Signup(){
                 }
         });
             const result = await response.json();
-            //setUser([...user, result]);
             console.log(result, "result");
             if(result == 'success'){
                 setIsRegisterd(true);
@@ -58,7 +56,7 @@ export default function Signup(){
                     <h5 style={{textAlign: 'center'}}>Login in <Link  to='/login'>HERE</Link> to continue exploring our products</h5>
                     </>:  <>
                      <h1 style={{ textAlign: 'center', color: 'brown' }}> Registration page</h1>
-                    <fieldset className='fieldset-container'>
+                    <fieldset className='fieldset-container'style={{ width: '400px'}}><h4 style={{marginTop: '5px'}}>Registration form</h4>
                         <form className='form-container' onSubmit={submitHandle}>
                             <label>Name:
                                 <input ref={nameRef} type='text' />
@@ -75,11 +73,12 @@ export default function Signup(){
                             <label>Address:
                                 <input ref={addrRef} type='text' />
                             </label><br />
-                            <button>Register</button>
+                            <button style={{margin: '6px'}}>Register</button>
                         </form>
                     </fieldset>
                     </>
-}
+                    }<br/>
+                    {/*conditional rendering of error message if the given emailID is already registered*/}
                    {isUserExist && <h4 style={{textAlign: 'center', color: 'red'}} >Given Email is already registered</h4>} 
                     <footer style={{alignItems:'end', position: 'absolute', bottom: '0' }}>
                     &copy; 2025 balvinbakery. All rights reserved.

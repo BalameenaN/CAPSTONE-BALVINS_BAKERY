@@ -3,7 +3,7 @@ import AppCarousel from './Appcarousel';
 import '../App.css'
 import Category from './Category.jsx';
 
-
+//home page component
 export default function Home() {
     console.log("inside Home");
     return (

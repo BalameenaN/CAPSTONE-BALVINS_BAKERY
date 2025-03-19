@@ -1,14 +1,13 @@
  import {useState} from 'react'
- //function to create JSX element for each product
-
  
+ //function to create JSX element for each product
  export default function productMatching(prod){
 
-    const[productID, setproductID] = useState("");
+    const[productID, setproductID] = useState("");//state to store the selected productID 
      
     async function clickHandle(id){
         
-
+        //getting the cart details from local storage
         const cartInitial = JSON.parse(localStorage.getItem('cart')) || [];
 
         try{
@@ -20,7 +19,8 @@
           console.log(newArr, "newArr");
           localStorage.setItem('cart', JSON.stringify(newArr));
            setproductID(id);
-
+          
+           //timeout function to remove 'added to cart' notification after 3s
            setTimeout(()=>{
             setproductID("");
            }, 3000);
@@ -31,6 +31,7 @@
 
     }
 
+    //using map method to display all the products based on their category
     const result = prod.map((p)=>{
 
         return(

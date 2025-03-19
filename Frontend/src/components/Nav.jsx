@@ -2,7 +2,7 @@ import logo from '../../image/logo1.png'
 import { Link } from 'react-router-dom'
 import Home from './Home.jsx'
 
-
+//header component for each page and links to different page
 export default function Nav() {
     console.log("inside Nav");
     return (

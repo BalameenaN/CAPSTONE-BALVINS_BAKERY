@@ -3,6 +3,9 @@
     width: 120px;
     
 }
+body{
+   padding: 16px 16px;  
+}
 
 body::before {
     content: "";
@@ -62,12 +65,14 @@ body::before {
    width: 300px;
    background-color: rgb(230, 226, 222);
    margin: 10px;
-   border: 1px solid brown;
+   border: 1px solid rgb(237, 197, 197);
    margin-left: auto;
    margin-right: auto;
    margin-top:100px;
   text-align: center;
   border-radius: 7px;
+  box-shadow: 5px 10px 5px 5px rgb(71, 70, 70);
+  
 }
 .form-container{
     
@@ -171,4 +176,23 @@ body::before {
 }
 .contact-container p{
     font-size:large;
+}
+.checkout-container{
+    
+    width: 40%;
+    height: 350px;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px;
+    background-color: brown;
+    color: white;
+}
+.checkout-button{
+
+    margin: 20px 20px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 8px;
 }
