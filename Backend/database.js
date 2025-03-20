@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
 
 //connecting to DB
-async function connectDB(){
+async function connectDB() {
 
-    try{
+    try {
         await mongoose.connect(process.env.MONGO_URL);
         console.log("MONGODB connected successfully");
 
-    }catch(e){
+    } catch (e) {
         console.log(e);
     }
 }

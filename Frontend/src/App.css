@@ -1,33 +1,36 @@
-.nav-img{
+.nav-img {
 
     width: 120px;
-    
+
 }
-body{
-   padding: 16px 16px;  
+
+body {
+    padding: 16px 16px;
 }
 
 body::before {
     content: "";
     position: fixed;
-   background-image: url("../image/bg_image.jpg");
+    background-image: url("../image/bg_image.jpg");
     z-index: -1;
     inset: 0;
     background-size: cover;
     opacity: 0.2;
 }
 
-.nav-bar{
+.nav-bar {
     display: flex;
     align-items: center;
     margin-left: auto;
     margin-top: auto;
-    
+
 }
-.nav-container{
+
+.nav-container {
     display: flex;
 }
-.nav-btn{
+
+.nav-btn {
     text-decoration: none;
     position: absolute;
     height: 40px;
@@ -40,52 +43,59 @@ body::before {
     text-align: center;
     color: brown;
     padding: 5px 5px;
-    
+
 }
-.nav-btn:hover{
-   background-color: brown;
-   color: white;
-   font-size: medium;
+
+.nav-btn:hover {
+    background-color: brown;
+    color: white;
+    font-size: medium;
 }
-.link{
+
+.link {
     color: brown;
     text-decoration: none;
     margin: 5px 5px;
     padding: 5px 5px;
     height: 50px;
-   
+
 }
-.link:hover{
+
+.link:hover {
     background-color: brown;
     color: white;
-    
+
 }
-.fieldset-container{
-    
-   width: 300px;
-   background-color: rgb(230, 226, 222);
-   margin: 10px;
-   border: 1px solid rgb(237, 197, 197);
-   margin-left: auto;
-   margin-right: auto;
-   margin-top:100px;
-  text-align: center;
-  border-radius: 7px;
-  box-shadow: 5px 10px 5px 5px rgb(71, 70, 70);
-  
+
+.fieldset-container {
+
+    width: 300px;
+    background-color: rgb(230, 226, 222);
+    margin: 10px;
+    border: 1px solid rgb(237, 197, 197);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 5px 10px 5px 5px rgb(71, 70, 70);
+
 }
-.form-container{
-    
+
+.form-container {
+
     margin: 5px 5px;
     color: rgb(51, 3, 3);
 }
-.form-container input{
+
+.form-container input {
     margin: 5px 5px;
     padding: 4px;
     border-radius: 5px;
     border: 1px solid rgb(97, 83, 83);
 }
-.form-container button{
+
+.form-container button {
     margin: 5px 5px;
     padding: 4px;
     width: 60px;
@@ -94,26 +104,30 @@ body::before {
     border: none;
     color: white;
 }
-.product-container img{
+
+.product-container img {
     width: 200px;
     height: 200px;
     margin-top: 30px;
     border-radius: 10px;
 }
-.product-container img:hover{
+
+.product-container img:hover {
     width: 220px;
     height: 250px;
 }
-.product-container{
+
+.product-container {
     /*border: 1px solid red;*/
     width: 250px;
-   background-color: rgba(219, 157, 157, 0.904);
+    background-color: rgba(219, 157, 157, 0.904);
     text-align: center;
     margin: 20px 20px;
     border-radius: 10px;
     color: rgb(247, 244, 244);
 }
-.product-btn{
+
+.product-btn {
     margin: 10px 10px;
     padding: 5px 5px;
     border-radius: 5px;
@@ -124,40 +138,45 @@ body::before {
 
 }
 
-.product-btn:hover{
-   
+.product-btn:hover {
+
     background-color: blanchedalmond;
     color: rgb(237, 99, 99);
 }
-.main-container{
+
+.main-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
-.carousel{
+
+.carousel {
     width: 70%;
     height: 10%;
     margin-top: 10px;
-    
+
 }
 
 .centered-carousel {
     display: flex;
     justify-content: center;
-   
+
 }
-.category-div img{
+
+.category-div img {
 
     width: 70%;
     height: 70%;
     border-radius: 80%;
 }
-.category-container{
+
+.category-container {
     display: flex;
     text-align: center;
     margin: 30px 40px;
 }
-.checkout{
+
+.checkout {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -168,17 +187,21 @@ body::before {
     color: white;
     padding: 5px 5px;
 }
-.contact-container{
+
+.contact-container {
     text-align: center;
 }
-.contact-container h3{
+
+.contact-container h3 {
     color: brown;
 }
-.contact-container p{
-    font-size:large;
+
+.contact-container p {
+    font-size: large;
 }
-.checkout-container{
-    
+
+.checkout-container {
+
     width: 40%;
     height: 350px;
     text-align: center;
@@ -189,7 +212,8 @@ body::before {
     background-color: brown;
     color: white;
 }
-.checkout-button{
+
+.checkout-button {
 
     margin: 20px 20px;
     border: none;
