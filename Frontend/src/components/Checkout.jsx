@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../App';
 
 //component for checkout page
 export default function Checkout() {
@@ -23,7 +24,7 @@ export default function Checkout() {
 
         try {
             // sending the ordered product id to DB
-            const response = await fetch('http://localhost:8080/order/', {
+            const response = await fetch(`${BASE_URL}/order/`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

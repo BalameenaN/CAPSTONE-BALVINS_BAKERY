@@ -10,6 +10,8 @@ import Signup from './components/Signup.jsx'
 import Cart from './components/Cart.jsx'
 import Checkout from './components/Checkout.jsx'
 
+export const BASE_URL=import.meta.env.VITE_API;
+
 
 function App() {
     const [product, setProduct] = useState([]); //state to store all the product details from DB
@@ -18,7 +20,7 @@ function App() {
     async function getProduct() {
 
         try {
-            const response = await fetch('http://localhost:8080/product');
+            const response = await fetch(`${BASE_URL}/product`);
             const result = await response.json();
             setProduct(result);
         } catch (e) {

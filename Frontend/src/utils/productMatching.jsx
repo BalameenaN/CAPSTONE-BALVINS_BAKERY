@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BASE_URL } from '../App';
 
 //function to create JSX element for each product
 export default function productMatching(prod) {
@@ -11,12 +12,12 @@ export default function productMatching(prod) {
         const cartInitial = JSON.parse(localStorage.getItem('cart')) || [];
 
         try {
-            const response = await fetch(`http://localhost:8080/product/id/${id}`);
+            const response = await fetch(`${BASE_URL}/product/id/${id}`);
             const result = await response.json();
-            console.log(result);
+            //console.log(result);
 
             const newArr = [...cartInitial, result];
-            console.log(newArr, "newArr");
+            //console.log(newArr, "newArr");
             localStorage.setItem('cart', JSON.stringify(newArr));
             setproductID(id);
 

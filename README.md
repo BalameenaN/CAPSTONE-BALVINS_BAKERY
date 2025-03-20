@@ -21,4 +21,7 @@
 - **Database:** MongoDB
 - **Styling:**  CSS / Bootstrap
 
+------------------------------------------------------------------------------------------------------------------------------------
+
+**Deployed link:** https://capstone-balvins-bakery-frontend.onrender.com/ 
 

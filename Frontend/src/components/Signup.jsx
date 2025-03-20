@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../App';
 
 //component for signup page
 export default function Signup() {
@@ -28,7 +29,7 @@ export default function Signup() {
 
         try {
             //sending the details given by user for validation in the backend
-            const response = await fetch('http://localhost:8080/user/signup', {
+            const response = await fetch(`${BASE_URL}/user/signup`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

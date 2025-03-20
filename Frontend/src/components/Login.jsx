@@ -2,6 +2,7 @@ import Nav from './Nav'
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../App';
 
 //component for login page
 export default function Login() {
@@ -22,7 +23,7 @@ export default function Login() {
         try {
             console.log("inside login-try");
             //details from login form is send to the login API for validation
-            const response = await fetch('http://localhost:8080/user/login', {
+            const response = await fetch(`${BASE_URL}/user/login`, {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
