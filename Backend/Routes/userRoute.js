@@ -1,5 +1,6 @@
 import express from 'express'
 import userModel from '../Models/userModel.js'
+import bcrypt from 'bcryptjs'
 
 const userRouter = express.Router();
 
@@ -31,7 +32,11 @@ userRouter.get('/id/:id', async (req, res) => {
 userRouter.post('/', async (req, res) => {
     console.log("inside /-post");
     console.log(req.body);
+    
     try {
+        const salt = await bcrypt.genSalt(10);
+        const hashedPwd = await bcrypt.hash(req.body.Password,salt);
+        req.body.Password = hashedPwd;
         const newDoc = await userModel.create(req.body);
         res.status(200).json(newDoc);
     } catch (e) {
@@ -46,6 +51,9 @@ userRouter.post('/signup', async (req, res) => {
     try {
         const userData = await userModel.find({ Email: req.body.Email });
         console.log(userData, "userdata");
+        const salt = await bcrypt.genSalt(10);
+        const hashedPwd = await bcrypt.hash(req.body.Password,salt);
+        req.body.Password = hashedPwd;
         //condition for checking if the given emailID is already registered 
         if (userData == "") {
             const newUser = await userModel.create(req.body);
@@ -71,7 +79,8 @@ userRouter.post('/login', async (req, res) => {
             res.status(404).json({ "error": "Email does not exist" });
         }
         else {
-            if (userData[0].Password === req.body.Password) {
+            const isMatch = await bcrypt.compare(req.body.Password, userData[0].Password);
+            if (isMatch) {
                 console.log(userData[0].Password === req.body.Password);
                 res.status(200).json("success");
             } else {
